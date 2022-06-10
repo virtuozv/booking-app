@@ -1,5 +1,6 @@
 import Featured from '../../components/featured/Featured';
 import FeaturedProperties from '../../components/featuredProperties/FeaturedProperties';
+import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
 import Mail from '../../components/mail/Mail';
 import Navbar from '../../components/navbar/navbar';
@@ -17,9 +18,9 @@ const Home = () => {
                 <PropertyList />
                 <h1 className="homeTitle">Homes guests love</h1>
                 <FeaturedProperties />
-                {/* <Footer/> */}
+                <Mail />
+                <Footer />
             </div>
-            <Mail />
         </div>
     )
 }

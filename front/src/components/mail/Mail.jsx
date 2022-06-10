@@ -2,7 +2,6 @@ import './mail.css';
 
 const Mail = () => {
   return (
-<div>
     <div className="mail">
             <h1 className="mailBigTitle">Save time, save money!</h1>
             <span className="mailTitle">Sign up and we'll send the best deals to you.</span>
@@ -15,7 +14,6 @@ const Mail = () => {
                 <div className="checkMailTitle">Send me a link to get the FREE Booking.com app!</div>
             </div>
         </div>
-    </div>
   )
 }
 
