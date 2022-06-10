@@ -7,7 +7,7 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import {format} from "date-fns";
 
-export const Header = () => {
+export const Header = ({type}) => {
     const [openDate, setOpenDate] = useState(false);
     const [date, setDate] = useState([
         {
@@ -20,17 +20,17 @@ export const Header = () => {
     const [options, setOptions] = useState({
         adult: 1,
         children:0,
-        room: 0,
+        room: 1,
     })
 
     const handleOption = (name, operation) => {
         setOptions(prev => {return {
-            ...prev, [name]: operation === "i" ? options[name] + 1 : options[name] - 1
+            ...prev, [name]: operation === "i" ? options[name]++ : options[name]--
         }})
     }
   return (
     <div className="header">
-        <div className="headerContainer">
+        <div className={type === "list" ? "headerContainer listMode": "headerContainer"}>
             <div className="headerList">
                 <div className="headerListItem active">
                     <FontAwesomeIcon icon={faBed} />
@@ -53,7 +53,7 @@ export const Header = () => {
                 <span>Airport taxis</span>
                 </div>
             </div>
-            <h1 className="headerTitle">A lifetime of discounts? It's genius.</h1>
+            { type !== "list" && <> <h1 className="headerTitle">A lifetime of discounts? It's genius.</h1>
             <p className="headerDesc">Get rewarded for your travels - unlock instant savings of 10% or mo with a free Exminbooking account.</p>
             <button className="headerBtn">Sign in / Register</button>
             <div className="headerSearch">
@@ -105,7 +105,7 @@ export const Header = () => {
                 <div className="headerSearchItem">
                     <button className="headerBtn">Search</button>
                 </div>
-            </div>
+            </div> </> }
         </div>
     </div>
   )
