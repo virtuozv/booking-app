@@ -127,4 +127,5 @@
 
 .optionCounterButton:disabled {
    cursor: not-allowed;
+   background-color: rgb(216, 213, 213);
 }
