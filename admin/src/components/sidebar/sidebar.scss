@@ -3,11 +3,13 @@
     border-right: 0.5px solid rgb(233, 232, 232);
     min-height: 100vh;
     background-color: white;
+
     .top {
         height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
+
         .logo {
             font-size: 20px;
             font-weight: bold;
@@ -22,6 +24,7 @@
 
     .center {
         padding-left: 10px;
+
         ul {
             list-style: none;
             margin: 0;
@@ -44,6 +47,7 @@
 
                 &:hover {
                     background-color: #ece8ff;
+
                     .icon {
                         color: black;
                     }
@@ -77,10 +81,11 @@
             border: 1px solid #7451f8;
             cursor: pointer;
             margin: 5px;
-            
+
             &:nth-child(1) {
                 background-color: whitesmoke;
             }
+
             &:nth-child(2) {
                 background-color: #333;
             }
