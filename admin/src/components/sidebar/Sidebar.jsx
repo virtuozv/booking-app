@@ -11,6 +11,7 @@ import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import AttractionsIcon from "@mui/icons-material/Attractions";
 import BalconyIcon from "@mui/icons-material/Balcony";
 import BrunchDiningIcon from "@mui/icons-material/BrunchDining";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -24,12 +25,12 @@ const Sidebar = () => {
           <p className="title">MAIN</p>
           <li>
             <DashboardIcon className="icon" />
-            <span>Dashboard</span>
+            <Link to="/">Dashboard</Link>
           </li>
           <p className="title">LIST</p>
           <li>
             <PersonOutlineOutlinedIcon className="icon" />
-            <span>Users</span>
+            <Link to="/users">Users</Link>
           </li>
           <li>
             <AllInboxIcon className="icon" />
