@@ -13,8 +13,10 @@ import { useContext, useState } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
+import Login from "../../pages/login/Login";
 
 export const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -43,6 +45,7 @@ export const Header = ({ type }) => {
   };
 
   const { dispatch } = useContext(SearchContext);
+  const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -90,7 +93,11 @@ export const Header = ({ type }) => {
               Get rewarded for your travels - unlock instant savings of 10% or
               mo with a free Exminbooking account.
             </p>
-            <button className="headerBtn">Sign in / Register</button>
+            {!user && (
+              <Link to="/login">
+                <button className="headerBtn">Sign in / Register</button>
+              </Link>
+            )}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
